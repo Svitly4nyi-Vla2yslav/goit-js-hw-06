@@ -20,11 +20,18 @@ const images = [
 //   .join(' ');
 // galleryList.insertAdjacentHTML('beforeend', imagesList);
 
-const gallery = document.querySelector('.gallery');
-const elementsGallery = images
-  .map(
-    image => `
+// const gallery = document.querySelector('.gallery');
+// const elementsGallery = images
+//   .map(
+//     image => `
+// <li class='item-image'><img src='${image.url}' alt='${image.alt}' class='image-gallery'/></li>`
+//   )
+//   .join(' ');
+// gallery.insertAdjacentHTML('beforeend', elementsGallery);
+const galleryList = document.querySelector('.gallery');
+const markupItem = images.map(image => 
+  `
 <li class='item-image'><img src='${image.url}' alt='${image.alt}' class='image-gallery'/></li>`
   )
   .join(' ');
-gallery.insertAdjacentHTML('beforeend', elementsGallery);
+  galleryList.insertAdjacentHTML('beforeend', markupItem);
